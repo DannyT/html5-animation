@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="Google Web Designer 1.0.1.1025">
+    <meta name="template" content="Interstitial 1.0.5">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      .gwd-page-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .gwd-page-content {
+        background-color: transparent;
+        -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        -webkit-transform-style: preserve-3d;
+        position: absolute;
+      }
+      .gwd-page-wrapper {
+        background-color: #FFF;
+        position: absolute;
+        -webkit-transform: translateZ(0);
+      }
+      .interstitial-pg1 {
+        width: 320px;
+        height: 50px;
+      }
+      .interstitial-pg2 {
+        width: 50px;
+        height: 320px;
+      }
+    </style>
+    <script type="text/x-serialization" id="gwd-serialization">
+    {
+      "version": 1,
+      "content": {
+        "type": "rad.ad.RichMedia",
+        "properties": {
+          "environment": "@environment"
+        },
+        "children": [
+          "@landscapePg1",
+          "@portraitPg1"
+        ]
+      },
+      "objects": {
+        "environment": {
+          "type": "rad.environment.DoubleClickStudio"
+        },
+        "portraitPg1": {
+          "type": "rad.ui.Page",
+          "decorates": true,
+          "events": [
+            {
+              "target": "@rad.ad.RichMedia",
+              "type": "rotatetolandscape",
+              "handler": {
+                "target": "@rad.ad.RichMedia",
+                "method": "goToPage",
+                "parameters": [
+                  "@landscapePg1"
+                ]
+              }
+            }
+          ],
+          "properties": {
+            "width": "50px",
+            "height": "320px"
+          }
+        },
+        "landscapePg1": {
+          "type": "rad.ui.Page",
+          "decorates": true,
+          "events": [
+            {
+              "target": "@rad.ad.RichMedia",
+              "type": "rotatetoportrait",
+              "handler": {
+                "target": "@rad.ad.RichMedia",
+                "method": "goToPage",
+                "parameters": [
+                  "@portraitPg1"
+                ]
+              }
+            }
+          ],
+          "properties": {
+            "width": "320px",
+            "height": "50px"
+          }
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div class="gwd-page-container">
+      <div id="portrait-pg1" class="gwd-page-wrapper interstitial-pg1" data-gwd-component-id="landscapePg1">
+        <div class="gwd-page-content interstitial-pg1">
+        </div>
+      </div>
+      <div id="landscape-pg1" class="gwd-page-wrapper interstitial-pg2" data-gwd-component-id="portraitPg1">
+        <div class="gwd-page-content interstitial-pg2">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
